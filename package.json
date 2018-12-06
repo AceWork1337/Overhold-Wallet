@@ -18,7 +18,7 @@
   "scripts": {
     "ng": "ng",
     "lint": "ng lint",
-    "build:electron:main": "tsc main.ts --outDir dist && copyfiles package.json dist && cd dist && npm install --prod && cd ..",
+    "build:electron:main": "tsc main.ts --outDir dist && copyfiles package.json dist && cd dist && npm install --prod && electron-rebuild --version 1.8.4 . && cd ..",
     "build": "webpack --display-error-details && npm run build:electron:main",
     "start:serve": "npm-run-all --parallel webpack:watch electron:serve",
     "start:backend": "cd backend && ./OverholdWalletBackend",

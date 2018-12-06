@@ -38,7 +38,7 @@ export class MainRightBarComponent implements OnInit, OnDestroy {
     prices = {};
     privateCryptoData = {};
     coins: ICoin[] = coins2;
-    countOfPages = 1;
+    countOfPages = 4;
     currentPage = 1;
     pageSize = 10;
     filterCoins: ICoin[] = [];
@@ -48,6 +48,7 @@ export class MainRightBarComponent implements OnInit, OnDestroy {
         'EUR',
         'BTC'
     ];
+    currency: string = 'USD';
     currentCurrency = 'USD';
     receiveMode = false;
     addresses = [{ address: '177Noj3QZ8brQPu5DZzoufBm1bAcPUqV7q', balance: 0 }];
@@ -122,7 +123,22 @@ export class MainRightBarComponent implements OnInit, OnDestroy {
         }
         this.ref.detectChanges();
     }
+    changeCurrency(data: { currency: string }) {
+        // this.total = data.totalBalance;
+        this.currency = data.currency
+        this.ref.detectChanges();
+      }
+    
+    public getCurrencySymbol(currency) {
 
+        switch (currency) {
+            case 'BTC': return 'BTC ';
+            case 'USD': return '$';
+            case 'EUR': return '€';
+            case '': break;
+        }
+  
+      }
     // copy to clipboard the address
     public onCopy() {
         clipboard.writeText(this.currentAddress);

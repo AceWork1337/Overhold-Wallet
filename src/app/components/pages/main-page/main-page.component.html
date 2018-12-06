@@ -12,7 +12,23 @@
       <div class="main-page__title">TOTAL BALANCE</div>
       <div class="main-page__amount">{{getCurrencySymbol(currency)}}{{getFormattedTotalAmount(total)}}</div>
     </div>
-    <main-chart></main-chart>
+    <div class="main-page__container__bottom">
+      <div class="live-photo-top">
+        <div class="effects">
+          <h4>Live Photo Effects</h4>
+          <p>Create loop. bounces and long exposures from your Wallet</p>
+        </div>
+        <div class="editing">
+          <h4>Live Photo Editing</h4>
+          <p>You can now choose a new key photo, trim and mute your Live Photos.</p>
+        </div>
+      </div>
+      <div class="live-photo-bottom">
+        <h4>Take a quick your of Photos...</h4>
+        <p>You can view the tour later from the Help menu.</p>
+      </div>
+    </div>
+    <!-- <main-chart></main-chart> -->
   </div>
 </div>
 <main-right-bar (notify)="changeCurrency($event)"></main-right-bar>

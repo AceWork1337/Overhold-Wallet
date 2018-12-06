@@ -15,11 +15,14 @@
     <li *ngFor="let coin of scrollItems" (click)="onReceiveMode(coin)" (contextmenu)="onSendMode(coin)" class="item">
       <div class="crypto_item {{ getCoinIcon(coin.name) }}"></div>
       <div class="info">
-        <div class="name">{{ coin.name }}</div>
-        <div class="rate">{{ getFormattedTotalAmount(prices[coin.name], getCoinBalance(coin.name) )}}</div>
+        
+        <div class="name">{{ getCoinBalance(coin.name) }} {{ getCoinSymbol(coin.name) }}</div>
+        <div class="rate">{{ coin.name }}</div>
       </div>
-      <div class="amount">{{ getCoinBalance(coin.name) }} {{ getCoinSymbol(coin.name) }}</div>
-      <div class="crypto_circle {{ getCoinColor(coin.name) }}"></div>
+      <div class="amount-right">
+        <div class="main-page__amount ">{{getCurrencySymbol(currentCurrency)}}</div>
+        <div class="amount main-page__amount">{{ getFormattedTotalAmount(prices[coin.name], getCoinBalance(coin.name) )}}</div>
+      </div>
     </li>
   </virtual-scroll>
 
@@ -30,6 +33,9 @@
     <span class="main-page-menu__legend-item main-page-menu__legend-item--right">Send</span>
   </div>
   <paginator [currentPage]="currentPage" [countOfPage]="countOfPages"></paginator>
+  <!-- <svg height="100" width="100">
+    <circle r="10" fill="#2F3248" />
+  </svg> -->
 </div>
 
 <div *ngIf="receiveMode" class="popup receive flex_column">
@@ -115,5 +121,6 @@
     <button class="arrow_btn right">
       <img src="../../../../../../src/img/arrow_right.png" />
     </button>
+    
   </div>
 </div>

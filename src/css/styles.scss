@@ -8,6 +8,8 @@
 
 body{
     overflow:auto;
+    background: url("../img/blur_bg3.jpg") no-repeat 100% 100%;
+    background-size: cover;
 }
 .animated.speed500{
     animation-duration: 0.5s;
@@ -171,7 +173,8 @@ body{
     width: 100%;
     font-size: 16px;
     font-family: 'SFUIText-Regular';
-    background: #12161f;
+    background: url("../img/blur_bg3.jpg") no-repeat 100% 100%;
+    background-size: cover;
     overflow: hidden;
 }
 .main_wrap{
@@ -182,10 +185,10 @@ body{
 .main_wrap.backup-complete .view_container{
     position: relative;
 }
-.transfer.main_wrap{
-    background: url(../img/blur_bg3.jpg) no-repeat 100% 100%;
-    background-size: cover;
-}
+// .transfer.main_wrap{
+//     background: url("../img/blur_bg3.jpg") no-repeat 100% 100%;
+//     background-size: cover;
+// }
 .transfer.main_wrap .left_menu{
     background: transparent;
     border-right: solid 1px rgba(255, 255, 255, 0.03)
@@ -278,6 +281,7 @@ body{
 
 .right_menu_wrap.big.main-page-menu {
     width: 500px;
+    background: transparent;
 }
 
 .transactions .right_menu_wrap.big{
@@ -485,6 +489,8 @@ select option {
     display: flex;
     height: 100%;
     flex-grow: 2;
+    background: url("../img/blur_bg3.jpg") no-repeat 100% 100%;
+    background-size: cover;
 }
 
 
