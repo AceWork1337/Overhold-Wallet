@@ -48,7 +48,6 @@ export class MainRightBarComponent implements OnInit, OnDestroy {
         'EUR',
         'BTC'
     ];
-    currency: string = 'USD';
     currentCurrency = 'USD';
     receiveMode = false;
     addresses = [{ address: '177Noj3QZ8brQPu5DZzoufBm1bAcPUqV7q', balance: 0 }];
@@ -123,13 +122,13 @@ export class MainRightBarComponent implements OnInit, OnDestroy {
         }
         this.ref.detectChanges();
     }
-    changeCurrency(data: { currency: string }) {
-        // this.total = data.totalBalance;
-        this.currency = data.currency
-        this.ref.detectChanges();
-      }
+    // changeCurrency(data: { currency: string }) {
+    //     // this.total = data.totalBalance;
+    //     this.currency = data.currency
+    //     this.ref.detectChanges();
+    //   }
     
-    public getCurrencySymbol(currency) {
+    public getCurrencySymbol2(currency) {
 
         switch (currency) {
             case 'BTC': return 'BTC ';

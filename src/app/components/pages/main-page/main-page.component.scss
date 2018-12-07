@@ -17,31 +17,45 @@
   align-items: center;
   padding: 40px 30px 16px;
   .main-page__container__bottom {
+    margin-bottom: 90px;
     .live-photo-top{
       display: inline-flex;
       margin-left: auto;
       margin-right: auto;
+      padding-bottom: 50px;
       .effects{
-        width: 30%;
+        width: 35%;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        h4 {
+        img {
+          width: 20%;
+        }
+        h5 {
+          margin-bottom: 0;
+          font-size: 14px;
           color: #FEFEFE;
         }
         p {
+          font-size: 13px;
           color: #CDCDCF;
         }
       }
       .editing{
-        width: 30%;
+        width: 35%;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        h4 {
+        img {
+          width: 20%;
+        }
+        h5 {
+          margin-bottom: 0;
+          font-size: 14px;
           color: #FEFEFE;
         }
         p {
+          font-size: 13px;
           color: #CDCDCF;
         }
       }
@@ -49,11 +63,15 @@
     .live-photo-bottom{
       width: 100%;
       text-align: center;
-      h4 {
+      h5 {
+        font-size: 14px;
+        margin-bottom: 0;
         color: #418EE7;
       }
       p{
-        color: #CDCDCF;
+          margin-top: 0;
+          font-size: 13px;
+          color: #CDCDCF;
       }
     }
   }
@@ -77,5 +95,7 @@
 
 .main-page__amount {
   font-size: 2rem;
-  margin: 25px 0;
+  // margin: 25px 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }

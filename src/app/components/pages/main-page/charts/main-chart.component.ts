@@ -11,7 +11,7 @@ import * as global from '../../../../globals';
     `,
   styles: [`
     :host, .main-chart {
-      display: block;
+      display: none;
       width: 100%;
     }
   `]

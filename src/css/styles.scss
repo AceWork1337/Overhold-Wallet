@@ -8,8 +8,8 @@
 
 body{
     overflow:auto;
-    background: url("../img/blur_bg3.jpg") no-repeat 100% 100%;
-    background-size: cover;
+    // background: url("../img/blur_bg3.jpg") no-repeat 100% 100%;
+    // background-size: cover;
 }
 .animated.speed500{
     animation-duration: 0.5s;
@@ -281,6 +281,7 @@ body{
 
 .right_menu_wrap.big.main-page-menu {
     width: 500px;
+    border-left: 1px solid #162637;
     background: transparent;
 }
 
@@ -383,7 +384,7 @@ select option {
 }
 .item_container{
     box-sizing: border-box;
-    height: calc(100% - 180px);
+    height: 80%;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -2144,7 +2145,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .right_wrap .control, .right_menu_wrap .control{
-    background: #161a25;
+    // background: #161a25;
+    background: transparent;
 }
 
 .backup-pop-phrase .view_container{
