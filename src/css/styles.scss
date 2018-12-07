@@ -384,7 +384,7 @@ select option {
 }
 .item_container{
     box-sizing: border-box;
-    height: 80%;
+    height: 82%;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -1759,6 +1759,12 @@ button.help{
 
 .alert{
     text-align: center;
+    //insert new class 
+    .exchAddres {
+        
+        color: #4a546e;
+        margin-top: 3%;
+    }
 }
 .alert .name{
     font-size: 0.9rem;
@@ -1771,6 +1777,8 @@ button.help{
     line-height: 1.25rem;
     color: rgba(255,255,255, 0.6);
 }
+
+
 .animation{
     display: flex;
     align-items: center;

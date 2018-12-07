@@ -49,13 +49,17 @@
         <div class="crypto_item {{getCoinIcon(currentViewCoin.name)}}"></div>
         <div class="info">
           <div class="name">
-            <span>{{currentViewCoin.name}}</span>
+            <span>{{getCoinBalance(currentViewCoin.name)}} {{getCoinSymbol(currentViewCoin.name)}}</span>
             <img src="../../../../../../src/img/arrow_rate_up_green.png" />
           </div>
-          <div class="rate">{{ getFormattedTotalAmount(prices[currentViewCoin.name], getCoinBalance(currentViewCoin.name) )}}</div>
+          <div class="rate">{{currentViewCoin.name}}</div>
         </div>
-        <div class="amount">{{getCoinBalance(currentViewCoin.name)}} {{getCoinSymbol(currentViewCoin.name)}}</div>
-        <div class="crypto_circle {{getCoinColor(currentViewCoin.name)}}"></div>
+        <!-- <div class="amount">{{ getFormattedTotalAmount(prices[currentViewCoin.name], getCoinBalance(currentViewCoin.name) )}}</div>
+        <div class="crypto_circle {{getCoinColor(currentViewCoin.name)}}"></div> -->
+        <div class="amount-right">
+            <div class="main-page__amount ">{{getCurrencySymbol2(currentCurrency)}}</div>
+            <div class="amount main-page__amount">{{ getFormattedTotalAmount(prices[currentViewCoin.name], getCoinBalance(currentViewCoin.name) )}}</div>
+          </div>
       </div>
     </div>
     <div class="qr_block">
@@ -64,8 +68,9 @@
       </div>
       <div class="alert">
         <div class="name">Your {{getCoinName(currentViewCoin.name)}} address</div>
+        <div class="exchAddres">({{getCoinBalance(currentViewCoin.name)}} {{getCoinSymbol(currentViewCoin.name)}})</div>
         <div class="text">{{currentAddress}}</div>
-        <h5>Balance: {{currentAddressBalance}}</h5>
+        <!-- <h5>Balance: {{currentAddressBalance}}</h5> -->
       </div>
       <div class="pagination">
         <button (click)="prevAddress()" class="pagination_button">
@@ -75,13 +80,14 @@
         <button (click)="nextAddres()" class="pagination_button">
           <img src="../../../../../../src/img/arrow_right.png" />
         </button>
+        <button class="receive-ButtonCopy">COPY ADDRESS</button>
       </div>
     </div>
   </div>
   <div class="footer">
-    <button class="arrow_btn left">
+    <!-- <button class="arrow_btn left">
       <img src="../../../../../../src/img/arrow_left.png" />
-    </button>
+    </button> -->
     <button class="panel_btn" (click)="onCopy()">
       <div class="btn_img">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67 67">
@@ -118,9 +124,9 @@
       </div>
       <span class="btn_title">Link</span>
     </button>
-    <button class="arrow_btn right">
+    <!-- <button class="arrow_btn right">
       <img src="../../../../../../src/img/arrow_right.png" />
-    </button>
+    </button> -->
     
   </div>
 </div>

@@ -105,14 +105,28 @@ display: inline-flex;
             justify-content: center;
 
             .qr_code_img {
-                margin: 0 0 65px;
+                margin: 0 0 5px;
+                margin-top: -30px;
+                img {
+                    margin-top: -20%;
+                    margin-left: 10%;
+                    width: 80%;
+                    height: 80%;
+                }
             }
 
             .alert{
                 font-size: 0.9rem;
-
+                margin-top: -30px;
                 .text{
                     color: #d59646;
+                }
+                .name {
+                    margin-bottom: 1%;
+                }
+                //insert new class
+                .exchAddres {
+                    margin-bottom: 4%;
                 }
             }
 
@@ -140,6 +154,19 @@ display: inline-flex;
                 .counter {
                     width: 40px;
                     text-align: center;
+                }
+                //insert new button
+                .receive-ButtonCopy {
+                    background: transparent;
+                    border-radius: 25px;
+                    border-color: #2b2f39;
+                    color: #fff;
+                    border-style: groove;
+                    padding: 15px 20px;
+                    position: absolute;
+                    margin-top: 60px;
+                    font-size: 11px;
+                    font-weight: 600;
                 }
             }
         }
