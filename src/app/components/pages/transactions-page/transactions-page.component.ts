@@ -18,6 +18,7 @@ import * as moment from 'moment';
     animations: [fadeAnimation]
 })
 export class TransactionsComponent implements OnInit, OnDestroy {
+    vissible = true;
     countOfPages: number = 1;
     currentPage: number = 1;
     pageSize: number = 10;
@@ -32,7 +33,6 @@ export class TransactionsComponent implements OnInit, OnDestroy {
     currentCurrency: any;
     userSelectedCurrency: any;
     transactionToOpen: any;
-    
     statusNames = [
         { name: 'All', type: 'all' },
         { name: 'Send', type: 'send' },
@@ -74,9 +74,10 @@ export class TransactionsComponent implements OnInit, OnDestroy {
         private sharedService: SharedService,
         private ref: ChangeDetectorRef
     ) {}
-
+    toggleDiv () {
+        this.vissible = !this.vissible;
+    }
     ngOnInit(): void {
-
         this.coinNames = Object.keys(coinsEnum).map(key => {
             this.coinsAddresses[coinsEnum[key].name] = [];
 			return coinsEnum[key];
@@ -294,7 +295,8 @@ export class TransactionsComponent implements OnInit, OnDestroy {
         }
 
     }
-
+    
+    
     private filterByTransactionType(coinName) {
         if (this.transactionType.type === this.transactionTypes[0].type) {
             // all

@@ -13,15 +13,27 @@
             <span class="item_value dropdown_item_value">{{ item.name }}</span>
           </ng-template>
         </ng-select>
+        <div   (click)="toggleDiv()" class="transactionsFillter custom-select">Filter</div>
+        <div *ngIf="vissible;else ace"></div>
+          <ng-template  #ace >
+            <div id="transactionsFillter1">
+                    <div>
+                      <span>Type</span> 
+                      <ng-select [items]="transactionTypes" (change)="onTransactionTypeChange()" [(ngModel)]="transactionType" [clearable]="false" [searchable]="false" class="custom-select2" bindLabel="type">
+                      </ng-select>
+                    </div>
+                    <div> 
+                      <span>Time</span>
+                      <ng-select [items]="periodNames" (change)="onPeriodChange()" [(ngModel)]="period" [clearable]="false" [searchable]="false" class="custom-select3" bindLabel="name">
+                      </ng-select>
+                    </div>
+                     <!-- <ng-select [items]="statusNames" (change)="onStatusChange()" [(ngModel)]="transactionStatus" [clearable]="false" [searchable]="false" class="custom-select" bindLabel="name">
+                    </ng-select> -->
+            </div>
+          </ng-template>
+                
 
-        <ng-select [items]="transactionTypes" (change)="onTransactionTypeChange()" [(ngModel)]="transactionType" [clearable]="false" [searchable]="false" class="custom-select" bindLabel="type">
-        </ng-select>
-
-        <ng-select [items]="statusNames" (change)="onStatusChange()" [(ngModel)]="transactionStatus" [clearable]="false" [searchable]="false" class="custom-select" bindLabel="name">
-        </ng-select>
-
-        <ng-select [items]="periodNames" (change)="onPeriodChange()" [(ngModel)]="period" [clearable]="false" [searchable]="false" class="custom-select" bindLabel="name">
-        </ng-select>
+        <!-- </ng-select> -->
       </div>
       <search class="search_transactions" placeholder="Search" [(searchText)]="searchTextValue" (onSearch)="search($event)"></search>
     </div>
@@ -36,7 +48,7 @@
     <virtual-scroll *ngIf="showTransactions" style="height: 100%" #scroll [items]="transactions" (change)="change($event)" (update)="filterTransactions = $event" (window:resize)="updateScrollItems()">
       <div class="row" *ngFor="let transaction of filterTransactions; let i = index" (click)="openTransaction(i, transaction)">
         <div class="row__content">
-          <div class="row__icon crypto_item {{getCoinIcon(transaction.coinName)}} {{ transaction.type }}"></div>          
+          <div class="row__icon crypto_item {{ transaction.type }}"></div>          
           <div>
             <div class="row__title">{{ transaction.transactionHash }}</div>
             <div class="row__description">{{ transformDate(transaction.transactionDate) }}</div>
@@ -46,7 +58,8 @@
           <div class="row__clearfix"></div>
           <div *ngIf="contentFullWidth" class="transaction-page__row-value" [ngClass]="transaction.type && ('type--' + transaction.type + '-value')">
             <span *ngIf="transaction.coinName!=='Counterparty' && transaction.coinName!=='Omni'">{{getSign(transaction.type)}}{{transaction.realAmount}} {{getCoinSymbol(transaction.coinName)}}</span>
-            <span *ngIf="transaction.coinName==='Counterparty' || transaction.coinName==='Omni'">{{getSign(transaction.type)}}{{transaction.realAmount}} {{transaction.asset}}</span>
+            <span *ngIf="transaction.coinName==='Counterparty' || transaction.coinName==='Omni'">{{getSign(transaction.type)}}{{transaction.realAmount}} {{transaction.asset}} {{getCoinIcon(transaction.coinName)}}</span>
+            <span class="row__icon crypto_item de {{getCoinIcon(transaction.coinName)}}"></span> 
           </div>
         </div>
 

@@ -19,9 +19,47 @@
     }
     .currency-icon {
       position: absolute;
-      margin: 0 15px;
+      margin: 0 25px;
       top: -8px;
       left: -60px;
+    }
+    .transactionsFillter {
+      width: 50px!important;
+    margin-right: 30px!important;
+    margin-left: 15px!important;
+      text-align: right;
+      &:before {
+        position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: url("../../../../img/new-assets/fillterButton.png") no-repeat center;
+      background-size: contain;
+      left: calc(55% - 10px);
+      margin-left: 00px;
+      }
+    }
+    #transactionsFillter1 {
+      // display: none;
+      width: 160px!important;
+      // margin-right: 0px!important;
+      margin-top: 50px; 
+      margin-left: 0px!important;
+      position: absolute;
+      background: #202634;
+      display: block;
+      z-index: 5;
+      padding: 15px;
+      border-radius: 10px;
+      div{
+        display: inline-flex;
+        span {
+          color: #8B93AA;
+          padding-bottom: 5px;
+        }
+      
+        
+      }
     }
   }
 }
