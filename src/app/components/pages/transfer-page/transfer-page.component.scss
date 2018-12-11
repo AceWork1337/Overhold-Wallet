@@ -258,3 +258,20 @@
         }
     }
 }
+.passwordForSend {
+    
+    margin-top: 13%;
+    p {
+        color: #48526e;
+        font-size: 0.8rem;
+    }
+    input {
+        border: none;
+        border-bottom: 1px solid #48526e;
+        width: 50%;
+        background: none;
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+    }
+}

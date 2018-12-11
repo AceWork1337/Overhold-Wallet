@@ -107,6 +107,10 @@
           Are you sure you want to send
           <span class="orange">{{amount}} {{getCoinSymbol(currentCurrency.name)}} (${{amount ? convertToUSD(amount) : 0}} USD</span>) to {{address}} with fees: {{getCoinMiningFees(currentCurrency.name)}} {{getCoinFeeLabel(currentCurrency.name)}}
           <span *ngIf="!isCoinBitcoinBased()" >({{convertCurrencyToUSD()}} USD)?</span>
+          <div class="passwordForSend">
+            <p>Password</p>
+            <input type="password">
+          </div>
           <div class="group_btns">
             <button class="btn btn_default" type="button" (click)="sendTransaction($event)">SEND</button>
             <button class="btn btn_default" type="button" (click)="cancel()">CANCEL</button>
@@ -132,8 +136,8 @@
 
     <div class="stages transfer">
       <div [ngClass]="{'active': step == 1}" class="sign_send stage_item"></div>
-      <div [ngClass]="{'active': step == 2}" class="sign_pin stage_item"></div>
-      <div [ngClass]="{'active': step == 3}" class="sign_complete stage_item"></div>
+      <div [ngClass]="{'active': step == 6 || step == 4}" class="sign_pin stage_item"></div>
+      <div [ngClass]="{'active': step == 3 || step == 7}" class="sign_complete stage_item"></div>
     </div>
   </div>
   <div class="control">

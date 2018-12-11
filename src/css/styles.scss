@@ -1046,10 +1046,11 @@ select option {
     font-size: 0.7rem;
     text-align: center;
     z-index: 1;
+    margin-top: 0px;
 }
 
 .content.transfer_money .middle_block .group_btns {
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
 .content.transfer_money .header_item{
@@ -1171,8 +1172,8 @@ select option {
 .transfer.stages .sign_send.stage_item:before{
     height: 32px;
     width: 33px;
-    background: url(../img/sign_send.png) no-repeat center;
-    background-size: cover;
+    background: url(../img/new-assets/icon-send-white.png) no-repeat center;
+    background-size: contain;
     left: calc(50% - 17.5px);
 }
 .transfer.stages .stage_item.sign_complete:before{
@@ -1182,15 +1183,15 @@ select option {
 .transfer.stages .sign_pin.stage_item:before{
     height: 32px;
     width: 34px;
-    background: url(../img/sign_pin.png) no-repeat center;
-    background-size: cover;
+    background: url(../img/new-assets/icon-password.png) no-repeat center;
+    background-size: contain;
     left: calc(50% - 17px);
 }
 .transfer.stages .sign_complete.stage_item:before{
     height: 32px;
     width: 33px;
-    background: url(../img/sign_complete.png) no-repeat center;
-    background-size: cover;
+    background: url(../img/new-assets/icon-clock-white.png) no-repeat center;
+    background-size: contain;
     left: calc(50% - 17.5px);
 }
 .transfer.stages .sign_exchange.stage_item:before{
