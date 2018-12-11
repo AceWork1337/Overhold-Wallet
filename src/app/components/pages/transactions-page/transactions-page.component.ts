@@ -19,7 +19,7 @@ import * as moment from 'moment';
 })
 export class TransactionsComponent implements OnInit, OnDestroy {
     vissible = true;
-    countOfPages: number = 1;
+    countOfPages: number = 4;
     currentPage: number = 1;
     pageSize: number = 10;
     transactionsThreshold = 100;    
@@ -328,6 +328,7 @@ export class TransactionsComponent implements OnInit, OnDestroy {
             t.coinName = coinName;
             t.realAmount = this.sharedService.getRealAmount(coinName, t.amount);
             t.type = this.determineTransactionType(t.coinName, t.from);
+            t.type = this.determineTransactionTypeBig(t.coinName, t.from);
             // if the addresses are the same, and the coin is using UTXO model only
             t.change = this.determineTransactionChangeStatus(t.from, t.to, coinName);
         }, this);
@@ -338,6 +339,11 @@ export class TransactionsComponent implements OnInit, OnDestroy {
         if (this.coinsAddresses[coinName].includes(from))
             return 'send';
         return 'receive';
+    }
+    private determineTransactionTypeBig(coinName, from): string {
+        if (this.coinsAddresses[coinName].includes(from))
+            return 'Send';
+        return 'Receive';
     }
 
     private determineTransactionChangeStatus(from, to, coinName): boolean {
@@ -387,6 +393,10 @@ export class TransactionsComponent implements OnInit, OnDestroy {
 
     getCoinSymbol(coinName: string): string {
         return coinsEnum[coinName].symbol;
+    }
+
+    getCoinName(coinName: string): string {
+        return coinsEnum[coinName].name;
     }
 
     closeTransaction() {

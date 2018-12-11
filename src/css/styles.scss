@@ -1516,6 +1516,34 @@ button.help{
     transition: .5s ease;
     border-color: rgba(255,255,255, 0.1);
 }
+.btn.btn_default.bit{
+    content: 'BTC'
+}
+.btn.btn_default.ETH{
+   content: 'ETH'
+}
+.btn.btn_default.BCH{
+    content: 'BCH'
+}
+.btn.btn_default.DASH{
+    content: 'DASH'
+}
+.btn.btn_default.DOGE{
+    content: 'DOGE'
+}
+.btn.btn_default.ETC{
+    content: 'ETC'
+}
+.btn.btn_default.LTC{
+    content: 'LTC'
+}
+.btn.btn_default.XRP{
+    content: 'XRP'
+}
+.btn.btn_default.WAVE{
+    content: 'WAVE'
+}
+
 .btn.btn_default:hover:enabled{
     border-color: #418ee8;
     background-color: #418ee8;
@@ -1637,25 +1665,25 @@ button.help{
     position: relative;
 }
 .crypto_item.send {
-    background-image: url(../img/transactions/send.png);
+    background-image: url(../img/new-assets/red-arrow-right.png);
     background-size: cover;
 }
-// .crypto_item.send::before{
-//     position: absolute;
-//     content: '';
-//     height: 16px;
-//     width: 16px;
-//     border-radius: 16px;
-//     border:2px solid #131622;
-//     background-image: url(../img/transactions/send.png);
-//     background-size: cover;
-//     right: -8px;
-//     bottom: -8px;
+.crypto_item.send::before{
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    border-radius: 16px;
+    border:2px solid #131622;
+    background-image: url(../img/transactions/send.png);
+    background-size: cover;
+    right: -8px;
+    bottom: -8px;
 
-// }
+}
 .crypto_item.receive {
     background-size: cover;
-    background-image: url(../img/transactions/receive.png);
+    background-image: url(../img/new-assets/arrow-green-down.png);
 }
 
 .crypto_item.receive::before{
@@ -1670,6 +1698,56 @@ button.help{
     bottom: -8px;
     right: -8px;
 }
+//add new class
+.crypto_item.Send, .crypto_item.Receive{
+    position: relative;
+    // background-image: url(src/img/new-assets/red-arrow-right.png);
+    // background-size: cover;
+    border-radius: 50px;
+
+}
+.crypto_item.Send {
+    background-image: url(../img/new-assets/red-arrow-right.png);
+    // background-size: cover;
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    padding: 21px;
+}
+// .crypto_item.Send::before{
+//     position: absolute;
+//     content: '';
+//     height: 16px;
+//     width: 16px;
+//     border-radius: 16px;
+//     border:2px solid #131622;
+//     background-image: url(../img/transactions/send.png);
+//     background-size: cover;
+//     right: -8px;
+//     bottom: -8px;
+
+// }
+.crypto_item.Receive {
+    background-size: cover;
+    background-image: url(../img/new-assets/arrow-green-down.png);
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    padding: 21px;
+}
+
+// .crypto_item.Receive::before{
+//     position: absolute;
+//     content: '';
+//     height: 16px;
+//     width: 16px;
+//     border-radius: 16px;
+//     border:2px solid #131622;
+//     background-size: cover;
+//     background-image: url(../img/transactions/receive.png);
+//     bottom: -8px;
+//     right: -8px;
+// }
 
 .info.rise .name::before{
     content:'';
@@ -1760,7 +1838,11 @@ button.help{
     position: relative;
     bottom: 0;
     transition: blur 1s;
-    background: #12161f;
+    // background: #12161f;
+    background: transparent;
+    button {
+background: #418ee8;
+    }
 }
 
 .under_breadcrumb{

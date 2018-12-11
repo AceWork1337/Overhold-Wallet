@@ -38,7 +38,7 @@
       <search class="search_transactions" placeholder="Search" [(searchText)]="searchTextValue" (onSearch)="search($event)"></search>
     </div>
   </div>
-  
+  <!-- <div class="newclass"> -->
   <div class="transactions-page__content">
     <div *ngIf="!showTransactions" class="container">
       <div class="alert">
@@ -48,9 +48,11 @@
     <virtual-scroll *ngIf="showTransactions" style="height: 100%" #scroll [items]="transactions" (change)="change($event)" (update)="filterTransactions = $event" (window:resize)="updateScrollItems()">
       <div class="row" *ngFor="let transaction of filterTransactions; let i = index" (click)="openTransaction(i, transaction)">
         <div class="row__content">
-          <div class="row__icon crypto_item {{ transaction.type }}"></div>          
+          <div class="row__icon crypto_item {{getCoinIcon(transaction.coinName)}} {{ transaction.type }}"></div>          
           <div>
-            <div class="row__title">{{ transaction.transactionHash }}</div>
+              <!-- <div class="row__title">{{transaction.transactionHash}}</div> -->
+            <div class="row__title">{{determineTransactionTypeBig(transaction.coinName,transaction.from)}}</div>
+            <!-- <div class="row__title">{{getCoinIcon(transaction.coinName)}}{{ transaction.transactionHash }}{{determineTransactionType(transaction.coinName,transaction.from)}}</div> -->
             <div class="row__description">{{ transformDate(transaction.transactionDate) }}</div>
           </div>
           <div *ngIf="!checkConfirmation(transaction.confirmations)" class="transaction-page__status">UNCONFIRMED</div>
@@ -60,18 +62,21 @@
             <span *ngIf="transaction.coinName!=='Counterparty' && transaction.coinName!=='Omni'">{{getSign(transaction.type)}}{{transaction.realAmount}} {{getCoinSymbol(transaction.coinName)}}</span>
             <span *ngIf="transaction.coinName==='Counterparty' || transaction.coinName==='Omni'">{{getSign(transaction.type)}}{{transaction.realAmount}} {{transaction.asset}} {{getCoinIcon(transaction.coinName)}}</span>
             <span class="row__icon crypto_item de {{getCoinIcon(transaction.coinName)}}"></span> 
+            
           </div>
         </div>
-
+ 
       </div>
+     
     </virtual-scroll>
+  
   </div>
-  <div class="control">
-    <button class="btn btn_default" type="button" (click)="send()">SEND</button>
-    
-    <paginator [currentPage]="currentPage" [countOfPage]="countOfPages"></paginator>
+      <div class=" control"  *ngFor="let transaction of filterTransactions; let i = index">
+          <button class="btn btn_default" type="button" (click)="send()">SEND {{getCoinSymbol(transaction.coinName)}}</button>
+          
+          <paginator [currentPage]="currentPage" [countOfPage]="countOfPages"></paginator>
+      </div>
   </div>
-</div>
 <transactions-right-bar class="right_menu_wrap big transaction__right-menu" 
                         *ngIf="showTransactionDetails" 
                         [@fade] 
