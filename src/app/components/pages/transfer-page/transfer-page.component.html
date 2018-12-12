@@ -112,8 +112,8 @@
             <input type="password">
           </div>
           <div class="group_btns">
-            <button class="btn btn_default" type="button" (click)="sendTransaction($event)">SEND</button>
-            <button class="btn btn_default" type="button" (click)="cancel()">CANCEL</button>
+            <button class="btn btn_default blueLine" type="button" (click)="sendTransaction($event)">SEND {{getCoinSymbol(currentCurrency.name)}}</button>
+            <button class="btn btn_default blueLineCancel" type="button" (click)="cancel()">CANCEL</button>
           </div>
           <div class="fadeInDown animated speed700" *ngIf="sendingTransaction">
             <div class="name">Sending transaction...</div>
