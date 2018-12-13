@@ -77,6 +77,9 @@ export class TransactionsComponent implements OnInit, OnDestroy {
     toggleDiv () {
         this.vissible = !this.vissible;
     }
+    toggleDivOff () {
+        this.vissible = true;
+    }
     ngOnInit(): void {
         this.coinNames = Object.keys(coinsEnum).map(key => {
             this.coinsAddresses[coinsEnum[key].name] = [];

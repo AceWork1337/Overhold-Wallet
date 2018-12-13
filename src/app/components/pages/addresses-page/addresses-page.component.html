@@ -1,23 +1,43 @@
-<div class="content adresses">
+<div class="content adresses" >
   <div class="header">
-    <ul class="breadcrumb">
+    <ul class="breadcrumb" >
       <li>Addresses</li>
     </ul>
     <div class="filters-container" [hidden]="!contentFullWidth">
       <div class="filters">
         <div class="crypto_item medium bd_radius-50 {{currency.icon}} currency-icon"></div>
 
-        <ng-select [items]="coinNames" [(ngModel)]="currency" (change)="onCurrencyChange()" [clearable]="false" [searchable]="false" class="custom-select coin-select"
+        <ng-select  [items]="coinNames" [(ngModel)]="currency" (change)="onCurrencyChange()" [clearable]="false" [searchable]="false" class="custom-select coin-select"
           bindLabel="name">
           <ng-template ng-option-tmp let-item="item">
             <span class="{{item.icon}} crypto_item item_icon"></span>
             <span class="item_value dropdown_item_value">{{ item.name }}</span>
           </ng-template>
         </ng-select>
-       
-        <ng-select [items]="addressTypes" (change)="onAddressTypeChange()" [(ngModel)]="addressType" [clearable]="false" [searchable]="false" class="custom-select" bindLabel="type">
-        </ng-select>
-      </div>
+       <div (clickOutside)="toggleDivOff()">
+        <div  (click)="toggleDiv()" class="transactionsFillter custom-select">Filter</div>
+        <div *ngIf="vissible;else ace"></div>
+          <ng-template  #ace >
+            <div id="transactionsFillter1">
+                    <!-- <div>
+                      <span>Type</span> 
+                      <ng-select [items]="transactionTypes" (change)="onTransactionTypeChange()" [(ngModel)]="transactionType" [clearable]="false" [searchable]="false" class="custom-select2" bindLabel="type">
+                      </ng-select>
+                    </div>
+                    <div> 
+                      <span>Time</span>
+                      <ng-select [items]="periodNames" (change)="onPeriodChange()" [(ngModel)]="period" [clearable]="false" [searchable]="false" class="custom-select3" bindLabel="name">
+                      </ng-select>
+                    </div> -->
+                     <!-- <ng-select [items]="statusNames" (change)="onStatusChange()" [(ngModel)]="transactionStatus" [clearable]="false" [searchable]="false" class="custom-select" bindLabel="name">
+                    </ng-select> -->
+                    <ng-select [items]="addressTypes" (change)="onAddressTypeChange()" [(ngModel)]="addressType" [clearable]="false" [searchable]="false" class="custom-select4" bindLabel="type">
+                    </ng-select>
+            </div>
+          </ng-template>
+
+        
+      </div></div>
       <search class="search_transactions" id="search_val" placeholder="Search" [(searchText)]="searchTextValue" (onSearch)="search($event)"></search>
     </div>
   </div>

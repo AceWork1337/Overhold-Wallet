@@ -13,7 +13,8 @@
             <span class="item_value dropdown_item_value">{{ item.name }}</span>
           </ng-template>
         </ng-select>
-        <div   (click)="toggleDiv()" class="transactionsFillter custom-select">Filter</div>
+        <div (clickOutside)="toggleDivOff()">
+        <div    (click)="toggleDiv()" class="transactionsFillter custom-select">Filter</div>
         <div *ngIf="vissible;else ace"></div>
           <ng-template  #ace >
             <div id="transactionsFillter1">
@@ -34,7 +35,7 @@
                 
 
         <!-- </ng-select> -->
-      </div>
+      </div></div>
       <search class="search_transactions" placeholder="Search" [(searchText)]="searchTextValue" (onSearch)="search($event)"></search>
     </div>
   </div>

@@ -71,6 +71,8 @@ export function highchartsFactory() {
   dd(hc);
   return hc;
 }
+//import new package
+import { ClickOutsideModule } from 'ng-click-outside';
 const Highcharts = require('highcharts');
 
 @NgModule({
@@ -116,7 +118,8 @@ const Highcharts = require('highcharts');
     ChartModule,
     NgSelectModule,
     VirtualScrollModule,
-    MomentModule
+    MomentModule,
+    ClickOutsideModule
   ],
   providers: [
     ElectronService,

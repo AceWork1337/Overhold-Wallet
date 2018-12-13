@@ -6,7 +6,7 @@ import * as global from '../../../globals';
 import {addressTypes} from '../../../enums/common';
 import { MessagingService } from '../../../providers/messaging.service';
 import { SharedService } from '../../../providers/shared.service';
-
+// import { ClickOutsideModule } from 'ng-click-outside';
 
 
 @Component({
@@ -22,8 +22,8 @@ import { SharedService } from '../../../providers/shared.service';
 	animations: [fadeAnimation]
 })
 export class AddressesPageComponent implements OnInit, OnDestroy {
-
-	countOfPages: number = 1;
+	vissible = true;
+	countOfPages: number = 4;
 	currentPage: number = 1;
 	pageSize: number = 10;
 	previousAddressId: number = -1;
@@ -59,7 +59,12 @@ export class AddressesPageComponent implements OnInit, OnDestroy {
 		private sharedService: SharedService,
 		private ref: ChangeDetectorRef
 	) {}
-
+	toggleDiv () {
+        this.vissible = !this.vissible;
+	}
+	toggleDivOff () {
+        this.vissible = true;
+    }
 	ngOnInit() {
 
 		this.coinNames = Object.keys(global.coinsEnum).map(key => {

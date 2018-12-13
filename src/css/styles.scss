@@ -2729,7 +2729,7 @@ addresses-page {
         margin-right: 15px;
         &.coin-select {
             .ng-control {
-                width: 90px;
+                width: 100%;
             }
         }
         .ng-control {
@@ -3082,6 +3082,144 @@ addresses-page {
             width: 180px;
             margin-left: -245px;
             margin-top: -60px;
+    
+            .ng-dropdown-panel-items .ng-option {
+                display: inline-flex;
+                height: 30px;
+                align-items: center;
+                background: #202634;
+                padding: 0;
+                width: 100%;
+                color: white;
+                border-radius:5px; 
+                margin-top: 10px;
+                margin-bottom: 10px;
+                &.selected {
+                    background-color: #2B313E;
+                    color: white;
+
+                    .ng-option-label {
+                        font-weight: normal;
+                    }
+                }
+    
+                &.marked {
+                    background: #2B313E;
+                    color: white;
+                }
+
+                .ng-option-label,
+                .item_value {
+                    font-style: normal;
+                    color: #fff;
+                    margin: 0 15px 0 15px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .ng-dropdown-footer {
+                border-color: rgba(255,255,255,0.04);
+                background: #171c26;
+                border-radius: 2px;
+                display: flex;
+                align-items: center;
+                padding: 0;
+                height: 35px;
+        
+                .show-all-coins {
+                    cursor: pointer;
+                    font-style: normal;
+                    color: #fff;
+                    margin: 0 15px 0 47px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .custom-select4 {
+        margin-right: 15px;
+        &.coin-select {
+            .ng-control {
+                width: 90px;
+            }
+        }
+        .ng-control {
+            box-sizing: border-box;
+            min-height: 20px;
+            height: 20px !important;
+            border: none;
+            border-radius: 3px;
+            background: url(../img/triangle_down_white.png) no-repeat 90% 50%;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            color: white;
+            width: 140px;
+            display: flex;
+            align-items: center;
+            position: static;
+            .ng-value-container .ng-placeholder {
+                color: #fff;
+                width: 85px;
+                font-size: 17px;
+                text-align: right;
+            }
+            .ng-arrow-zone {
+                display: none;
+            }
+
+            .ng-value {
+                display: flex;
+                align-items: center;
+                padding-right: 30px;
+
+                .ng-value-label {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .item_icon {
+                    width: 17px;
+                    height: 17px;
+                    border-radius: 50%;
+                    flex-shrink: 0;
+                }
+
+                .item_value {
+                    padding-left: 10px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+        
+        &.ng-select.opened>.ng-control {
+            background: url('../img/triangle_down_white.png') no-repeat 90% 50%;
+        }
+
+        &.ng-select.focused:not(.opened) > .ng-control {
+                box-shadow: none;
+                border: none;
+        }
+
+        .item_icon {
+            border-radius: 50%;
+            width: 17px;
+            height: 17px;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+
+        .ng-dropdown-panel {
+            border-radius: 5px;
+            border: 0;
+            box-shadow: none;
+            background: #202634;
+            width: 180px;
+            margin-left: -200px;
+            margin-top: -33px;
     
             .ng-dropdown-panel-items .ng-option {
                 display: inline-flex;
