@@ -23,10 +23,16 @@
         </div>
       </div>
 
-      <div class="row--adress key-func-button">
-        <button (click)="showPrivateKey()" class="btn btn_default blueLineAdressesInfo" *ngIf="!visibleCode">SEE PRIVATE KEY</button>
+      <div class="row--adress key-func-button" id="butGroup">
+          <div id="passwordForBackupId" class="passwordForBackup blueLineAdressesInfoNone">
+              <p>Password</p>
+              <input type="password">
+            </div> 
+        <button (click)="showPassword()" class="btn btn_default " id="blueLineAdressesInfo">SEE PRIVATE KEY</button>
+        <button (click)="showPrivateKey() ; hidePassword()" class="btn btn_default blueLineAdressesInfoNone" id="blueLineAdressesInfo2" *ngIf="!visibleCode">SEE PRIVATE KEY</button>
         <button (click)="copyPrivateKey()" class="btn btn_default blueLineAdressesInfo" *ngIf="visibleCode">COPY PRIVATE KEY</button>
         <button class="btn btn_default " (click)="copyAddress()">COPY ADDRESS</button>
+        
         
       </div>
       

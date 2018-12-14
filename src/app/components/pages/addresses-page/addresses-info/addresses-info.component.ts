@@ -42,7 +42,32 @@ export class AddressesInfoComponent implements OnInit, OnDestroy {
     private messagingService: MessagingService,
     private ref: ChangeDetectorRef
   ) {}
-
+  showPassword(){
+    var privatekeyinput = document.getElementById("blueLineAdressesInfo");
+      // privatekeyinput.classList.remove("passwordForBackup");
+      privatekeyinput.classList.add("blueLineAdressesInfoNone");
+    var privatekeyinput2 = document.getElementById("blueLineAdressesInfo2");
+      privatekeyinput2.classList.remove("blueLineAdressesInfoNone");
+      privatekeyinput2.classList.add("blueLineAdressesInfo");
+    var passinput = document.getElementById("passwordForBackupId");
+      passinput.classList.remove("blueLineAdressesInfoNone");
+      // passinput.classList.add("passwordForBackupNone");
+    var groupnput = document.getElementById("butGroup");
+      groupnput.classList.add(".key-func-button2");
+  }
+  hidePassword(){
+    // var privatekeyinput = document.getElementById("blueLineAdressesInfo");
+    //   // privatekeyinput.classList.remove("passwordForBackup");
+    //   privatekeyinput.classList.add("blueLineAdressesInfoNone");
+    // var privatekeyinput2 = document.getElementById("blueLineAdressesInfo2");
+    //   privatekeyinput2.classList.remove("blueLineAdressesInfoNone");
+      // privatekeyinput2.classList.add("blueLineAdressesInfo");
+    var passinput = document.getElementById("passwordForBackupId");
+      passinput.classList.add("blueLineAdressesInfoNone");
+      // passinput.classList.add("passwordForBackupNone");
+      var groupnput = document.getElementById("butGroup");
+      groupnput.classList.remove(".key-func-button2");
+  }
   ngOnInit() {
 
     this.firebaseSubscription = this.messagingService.firebaseSubject.subscribe(data => {
