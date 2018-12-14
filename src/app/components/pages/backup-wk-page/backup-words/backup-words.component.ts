@@ -42,7 +42,12 @@ export class BackupWordsComponent implements OnInit {
     ) {
         this.mnemonicWords = [];
     }
-
+    hidePassInput() {
+        var passinput = document.getElementById("passwordForBackupId");
+        passinput.classList.remove("passwordForBackup");
+        passinput.classList.add("passwordForBackupNone");
+        // .removeClass().addClass("passwordForBackupNone");;
+    }
     ngOnInit() {
         $(this.el.nativeElement).addClass('fadeIn animated speed700');
 

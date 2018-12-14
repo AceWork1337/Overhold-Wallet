@@ -22,7 +22,49 @@
             justify-content: space-between;
         }
     }
+    .passwordForBackup {
+    
+        margin-top: -7%;
+        position: absolute;
+        p {
+            color: #48526e;
+            font-size: 0.8rem;
+            text-align: center;
+    
+        }
+        input {
+            border: none;
+            border-bottom: 1px solid #48526e;
+            width: 50%;
+            background: none;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            margin-left: 25%;
 
+        }
+    }
+    .passwordForBackupNone {
+        display: none!important;
+    }
+    .blueLineBackup {
+        border-color: #147afc;
+        padding-top: 15px;
+        padding-bottom: 22px;
+    }
+    .blueLineCancelBackup {
+        padding-top: 15px;
+        padding-bottom: 22px;
+    }
+    .backupPhraseDownloadBnt{
+        display: inline-flex;
+        button {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
     .next{
         margin: 0 auto;
         margin-bottom: 80px;

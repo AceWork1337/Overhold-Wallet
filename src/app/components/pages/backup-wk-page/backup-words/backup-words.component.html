@@ -66,10 +66,18 @@
                 <div> {{ mnemonicWords[11] }}</div>
             </div>
         </div>       
-    </div> 
-    <button class="btn btn_default show" *ngIf="verified" (click)="quitMnemonic()">OKAY</button>
-        
-    <button class="btn btn_default show" *ngIf="!verified" (click)="showMnemonicPhrase()">SHOW PHRASE</button>
+    </div>
+    <div id="passwordForBackupId" class="passwordForBackup">
+        <p>Password</p>
+        <input type="password">
+      </div> 
+    
+    <div class="backupPhraseDownloadBnt">
+        <button class="btn btn_default show blueLineBackup" *ngIf="verified" (click)="quitMnemonic()">OKAY</button>
+        <button class="btn btn_default show blueLineBackup" *ngIf="!verified" (click)="showMnemonicPhrase();hidePassInput()">SHOW PHRASE</button>
+        <!-- need functionality -->
+        <button class="btn btn_default show blueLineCancelBackup" >DOWNLOAD BACKUP</button>
+    </div>
     <div class="alert">
         <div class="name attention">Write down your recovery phrase</div>
         <div class="text">

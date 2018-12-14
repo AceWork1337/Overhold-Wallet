@@ -24,9 +24,10 @@
       </div>
 
       <div class="row--adress key-func-button">
-        <button class="btn btn_default" (click)="copyAddress()">COPY ADDRESS</button>
-        <button (click)="showPrivateKey()" class="btn btn_default" *ngIf="!visibleCode">SEE PRIVATE KEY</button>
-        <button (click)="copyPrivateKey()" class="btn btn_default" *ngIf="visibleCode">COPY PRIVATE KEY</button>
+        <button (click)="showPrivateKey()" class="btn btn_default blueLineAdressesInfo" *ngIf="!visibleCode">SEE PRIVATE KEY</button>
+        <button (click)="copyPrivateKey()" class="btn btn_default blueLineAdressesInfo" *ngIf="visibleCode">COPY PRIVATE KEY</button>
+        <button class="btn btn_default " (click)="copyAddress()">COPY ADDRESS</button>
+        
       </div>
       
       <div class="address_page"></div>
